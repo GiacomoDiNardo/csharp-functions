@@ -6,7 +6,7 @@ void StampaArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i] + " ");
+        Console.Write($"{array[i]} ");
     }
 }
 
@@ -44,42 +44,75 @@ int SommaElementiArray(int[] array)
 
 int[] numbers = {2, 6, 7, 5, 3, 9};
 
-StampaArray(numbers);
+//StampaArray(numbers);
 
-Console.WriteLine();
+//Console.WriteLine();
 
-StampaArray(ElevaArrayAlQuadrato(numbers));
+//StampaArray(ElevaArrayAlQuadrato(numbers));
 
-Console.WriteLine();
+//Console.WriteLine();
 
-Console.WriteLine(SommaElementiArray(numbers));
+//Console.WriteLine(SommaElementiArray(numbers));
 
-Console.WriteLine();
+//Console.WriteLine();
 
-Console.WriteLine(SommaElementiArray(ElevaArrayAlQuadrato(numbers)));
+//Console.WriteLine(SommaElementiArray(ElevaArrayAlQuadrato(numbers)));
 
-// BONUS
+//// BONUS
 
-Console.WriteLine("quanti numeri vuoi inserire?");
-int numEl = Convert.ToInt32(Console.ReadLine());
-int[] nums = new int[numEl];
+//Console.WriteLine("quanti numeri vuoi inserire?");
+//int numEl = Convert.ToInt32(Console.ReadLine());
+//int[] nums = new int[numEl];
 
-for (int i = 0; i < nums.Length; i++)
+//for (int i = 0; i < nums.Length; i++)
+//{
+//    Console.WriteLine("inserisci un numero");
+//    nums[i] = Convert.ToInt32(Console.ReadLine());
+//}
+
+//StampaArray(nums);
+
+//Console.WriteLine();
+
+//StampaArray(ElevaArrayAlQuadrato(nums));
+
+//Console.WriteLine();
+
+//Console.WriteLine(SommaElementiArray(nums));
+
+//Console.WriteLine();
+
+//Console.WriteLine(SommaElementiArray(ElevaArrayAlQuadrato(nums)));
+
+
+//ex zoom
+//Si chiede di implementare due funzioni che eseguano le corrsipettive funzioni matematiche:
+//1 - Fattoriale di un numero
+//2 - La sequenza di fibonacci di un numero
+
+int factorial(int number)
 {
-    Console.WriteLine("inserisci un numero");
-    nums[i] = Convert.ToInt32(Console.ReadLine());
+    if (number == 0)
+    {
+        return 1;
+    } else
+    {
+        return number *= factorial(number - 1);
+    }
 }
 
-StampaArray(nums);
-
+Console.WriteLine(factorial(5));
 Console.WriteLine();
 
-StampaArray(ElevaArrayAlQuadrato(nums));
+void Fibonacci(int num1, int num2, int count)
+{
+    if (count == 0) return;
 
-Console.WriteLine();
+    int current = num1 + num2;
 
-Console.WriteLine(SommaElementiArray(nums));
+    Console.WriteLine(current);
 
-Console.WriteLine();
+    Fibonacci(num2, current, count - 1);
+}
 
-Console.WriteLine(SommaElementiArray(ElevaArrayAlQuadrato(nums)));
+Fibonacci(0, 1, 20);
