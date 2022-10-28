@@ -58,3 +58,28 @@ Console.WriteLine();
 
 Console.WriteLine(SommaElementiArray(ElevaArrayAlQuadrato(numbers)));
 
+// BONUS
+
+Console.WriteLine("quanti numeri vuoi inserire?");
+int numEl = Convert.ToInt32(Console.ReadLine());
+int[] nums = new int[numEl];
+
+for (int i = 0; i < nums.Length; i++)
+{
+    Console.WriteLine("inserisci un numero");
+    nums[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+StampaArray(nums);
+
+Console.WriteLine();
+
+StampaArray(ElevaArrayAlQuadrato(nums));
+
+Console.WriteLine();
+
+Console.WriteLine(SommaElementiArray(nums));
+
+Console.WriteLine();
+
+Console.WriteLine(SommaElementiArray(ElevaArrayAlQuadrato(nums)));
